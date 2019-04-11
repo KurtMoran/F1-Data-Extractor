@@ -17,7 +17,7 @@ colNum = 1
 #Video to frames
 videocap = cv2.VideoCapture('LEC.mp4')
 success,image = videocap.read()
-frame = 0
+frame = 1
 
 #Reference Colors
 yellowRef = [0, 211, 254]
@@ -25,7 +25,7 @@ blackRef = [0, 0, 0]
 redRef = [4, 29, 255]
 
 while success:
- 
+
 	#cv2.imwrite("LEC%d.png" % frame, image) #Creates .png of every frame (used for troubleshooting)
 	videocap.set(1,frame)
 	success,image = videocap.read()	
@@ -65,7 +65,6 @@ while success:
 	green = cv2.countNonZero(dst)
 	
 	print ('Amount of green pixels = ' + str(green))
-	
 	cv2.imshow("Color", dst)
 	cv2.waitKey(0)
 	
